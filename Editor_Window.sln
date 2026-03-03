@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IdhEngine", "IdhEngine\IdhEngine.vcxproj", "{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IdhEngine_Window", "IdhEngine_Window\IdhEngine_Window.vcxproj", "{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IdhEngine_SOURCE", "IdhEngine_SOURCE\IdhEngine_SOURCE.vcxitems", "{55649845-7281-4207-8EE4-F33F89645196}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,11 +25,24 @@ Global
 		{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}.Release|x64.Build.0 = Release|x64
 		{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}.Release|x86.ActiveCfg = Release|Win32
 		{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}.Release|x86.Build.0 = Release|Win32
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Debug|x64.ActiveCfg = Debug|x64
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Debug|x64.Build.0 = Debug|x64
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Debug|x86.ActiveCfg = Debug|Win32
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Debug|x86.Build.0 = Debug|Win32
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Release|x64.ActiveCfg = Release|x64
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Release|x64.Build.0 = Release|x64
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Release|x86.ActiveCfg = Release|Win32
+		{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02A719CD-FB1C-4796-A20C-A06BBD67D714}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		IdhEngine_SOURCE\IdhEngine_SOURCE.vcxitems*{55649845-7281-4207-8ee4-f33f89645196}*SharedItemsImports = 9
+		IdhEngine_SOURCE\IdhEngine_SOURCE.vcxitems*{595b4f27-5ad5-4e4b-9cf2-649bd4fb3bdc}*SharedItemsImports = 4
+		IdhEngine_SOURCE\IdhEngine_SOURCE.vcxitems*{a53a6970-49a0-422b-8e85-bb9ad3fcd7d5}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal

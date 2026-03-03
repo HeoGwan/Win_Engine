@@ -1,5 +1,6 @@
 #include "idhApplication.h"
 #include "idhInput.h"
+#include "idhTime.h"
 
 namespace idh
 {
@@ -23,6 +24,7 @@ namespace idh
 		mPlayer.SetPosition(0, 0);
 
 		Input::Initialize();
+		Time::Initialize();
 	}
 
 	void Application::Run()
@@ -35,6 +37,7 @@ namespace idh
 	void Application::Update()
 	{
 		Input::Update();
+		Time::Update();
 
 		mPlayer.Update();
 	}
@@ -46,6 +49,7 @@ namespace idh
 	
 	void Application::Render()
 	{
+		Time::Render(mHdc);
 		mPlayer.Render(mHdc);
 	}
 }
