@@ -1,15 +1,13 @@
 #pragma once
 #include "CommonInclude.h"
-#include "idhGameObjectBullet.h"
 
 namespace idh
 {
-	// Actor
-	class GameObject
+	class GameObjectBullet
 	{
 	public:
-		GameObject();
-		~GameObject();
+		GameObjectBullet();
+		~GameObjectBullet();
 
 		void Update();
 		void LateUpdate();
@@ -29,7 +27,5 @@ namespace idh
 		// 게임 오브젝트의 좌표
 		float mX;
 		float mY;
-		std::vector<GameObjectBullet*> bullets;
 	};
 }
-

@@ -143,6 +143,11 @@
     <Image Include="IdhEngine.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdhEngine_Window\IdhEngine_Window.vcxproj">
+      <Project>{595b4f27-5ad5-4e4b-9cf2-649bd4fb3bdc}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

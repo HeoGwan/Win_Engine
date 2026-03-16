@@ -17,6 +17,13 @@ namespace idh
 		void Render();
 
 	private:
+		void clearRenderTarget();
+		void copyRenderTarget(HDC source, HDC dest);
+		void adjustWindowRect(HWND hwnd, UINT width, UINT height);
+		void createBuffer(UINT width, UINT height);
+		void initializeEtc();
+
+	private:
 		HWND mHwnd;
 		HDC mHdc;
 
@@ -26,7 +33,6 @@ namespace idh
 		UINT mWidth;
 		UINT mHeight;
 
-		// 플레이어
-		GameObject mPlayer;
+		//std::vector<Scene*> mScenes;
 	};
 }

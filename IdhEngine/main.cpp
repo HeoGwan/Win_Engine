@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "IdhEngine.h"
 #include "..\\IdhEngine_SOURCE\\idhApplication.h"
+#include "..\\IdhEngine_Window\\idhLoadScene.h"
 
 //#pragma comment (lib, "..\\x64\\Debug\\IdhEngine_Window.lib")
 idh::Application application;
@@ -145,6 +146,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   // Load Scenes
+   idh::LoadScenes();
 
    return TRUE;
 }

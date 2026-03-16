@@ -128,6 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="idhLoadScene.h" />
+    <ClInclude Include="idhPlayScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="idhPlayScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

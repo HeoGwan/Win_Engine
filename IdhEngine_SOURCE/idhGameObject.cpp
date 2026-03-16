@@ -1,6 +1,7 @@
 #include "idhGameObject.h"
 #include "idhInput.h"
 #include "idhTime.h"
+#include <algorithm>
 
 namespace idh
 {
@@ -36,6 +37,22 @@ namespace idh
 		{
 			mY += speed * Time::DeltaTime();
 		}
+
+		if (Input::GetKeyDown(eKeyCode::Space))
+		{
+			// 총알을 생성한다
+			//GameObjectBullet* bullet = new GameObjectBullet();
+			GameObjectBullet* bullet = new GameObjectBullet();
+			bullet->SetPosition(mX, mY);
+			bullets.push_back(bullet);
+			//bullets.push_back(bullet);
+		}
+
+		std::for_each(bullets.begin(), bullets.end(),
+			[&](GameObjectBullet* bullet) -> void
+			{
+				bullet->Update();
+			});
 	}
 
 	void GameObject::LateUpdate()
@@ -46,21 +63,27 @@ namespace idh
 	void GameObject::Render(HDC hdc)
 	{
 		// 파랑 브러쉬 생성
-		HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));
+		HBRUSH blueBrush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
 
 		// 파랑 브러쉬 DC에 선택 그리고 흰색 브러쉬 반환값 반환
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
 
-		HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
+		HPEN redPen = CreatePen(PS_SOLID, 2, RGB(rand() % 255, rand() % 255, rand() % 255));
 		HPEN oldPen = (HPEN)SelectObject(hdc, redPen);
 
 		SelectObject(hdc, oldPen);
 
-		Rectangle(hdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
+		Ellipse(hdc, mX, mY, 200 + mX, 200 + mY);
 
 		// 다시 흰색 원본브러쉬로 선택
 		SelectObject(hdc, oldBrush);
 		DeleteObject(blueBrush);
 		DeleteObject(redPen);
+
+		std::for_each(bullets.begin(), bullets.end(),
+			[&](GameObjectBullet* bullet) -> void
+			{
+				bullet->Render(hdc);
+			});
 	}
 }
