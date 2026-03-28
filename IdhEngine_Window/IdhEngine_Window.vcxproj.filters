@@ -10,8 +10,14 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="idhPlayScene.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="idhPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayScene.cpp" />
+    <ClCompile Include="idhPlayer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IdhEngine_Window.rc" />
   </ItemGroup>
 </Project>
