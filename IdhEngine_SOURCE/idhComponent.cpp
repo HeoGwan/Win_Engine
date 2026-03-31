@@ -2,7 +2,8 @@
 
 namespace idh
 {
-	Component::Component()
+	Component::Component(enums::eComponentType type)
+		: mType(type)
 	{
 	}
 

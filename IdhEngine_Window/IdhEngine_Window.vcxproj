@@ -130,18 +130,16 @@
   <ItemGroup>
     <ClInclude Include="idhLoadScene.h" />
     <ClInclude Include="idhPlayer.h" />
+    <ClInclude Include="idhPlayerScript.h" />
     <ClInclude Include="idhPlayScene.h" />
     <ClInclude Include="idhTitleScene.h" />
     <ClInclude Include="idhLoadResources.h" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayer.cpp" />
+    <ClCompile Include="idhPlayerScript.cpp" />
     <ClCompile Include="idhPlayScene.cpp" />
     <ClCompile Include="idhTitleScene.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="IdhEngine_Window.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

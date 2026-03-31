@@ -22,6 +22,9 @@ namespace idh
 			T* comp = new T();
 			comp->Initialize();
 			comp->SetOwner(this);
+
+			mComponents[(UINT)comp->GetType()] = comp;
+
 			mComponents.push_back(comp);
 			return comp;
 		}
@@ -43,10 +46,6 @@ namespace idh
 		void initializeTransform();
 
 	private:
-		//// 게임 오브젝트의 좌표
-		//float mX;
-		//float mY;
-		//std::vector<GameObjectBullet*> bullets;
 		std::vector<Component*> mComponents;
 	};
 }

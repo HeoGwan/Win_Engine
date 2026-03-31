@@ -7,12 +7,14 @@
     <Filter Include="Contents">
       <UniqueIdentifier>{38a8b84a-1945-4757-a2a2-66a4e153079c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents\Scripts">
+      <UniqueIdentifier>{53323230-c179-4b3b-945e-d562c0a9292e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="idhLoadScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="idhPlayer.h">
       <Filter>Contents</Filter>
     </ClInclude>
@@ -23,6 +25,9 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="idhLoadResources.h" />
+    <ClInclude Include="idhPlayerScript.h">
+      <Filter>Contents\Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayer.cpp">
@@ -34,8 +39,8 @@
     <ClCompile Include="idhTitleScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="IdhEngine_Window.rc" />
+    <ClCompile Include="idhPlayerScript.cpp">
+      <Filter>Contents\Scripts</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

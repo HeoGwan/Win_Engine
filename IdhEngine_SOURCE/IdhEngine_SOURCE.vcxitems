@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEnums.h" />
@@ -24,10 +25,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhScript.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTime.h" />
@@ -35,16 +38,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTime.cpp" />

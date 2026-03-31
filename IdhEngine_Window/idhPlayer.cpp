@@ -19,13 +19,7 @@ namespace idh
 	{
 		GameObject::LateUpdate();
 
-		if (Input::GetKey(eKeyCode::Right))
-		{
-			Transform* tr = GetComponent<Transform>();
-			Vector2 pos = tr->GetPosition();
-			pos.x += 100.0f * Time::DeltaTime();
-			tr->SetPosition(pos);
-		}
+		
 	}
 
 	void Player::Render(HDC hdc)

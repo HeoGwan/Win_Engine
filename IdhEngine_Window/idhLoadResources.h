@@ -6,6 +6,7 @@ namespace idh
 {
 	void LoadResources()
 	{
-		Resources::Load<graphics::Texture>(L"BG", L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\CloudOcean.png");
+		Resources::Load<graphics::Texture>(L"Map", L"..\\Resources\\img\\map\\map_pure.png");
+		Resources::Load<graphics::Texture>(L"PackMan", L"..\\Resources\\img\\pacman\\0.png");
 	}
 }

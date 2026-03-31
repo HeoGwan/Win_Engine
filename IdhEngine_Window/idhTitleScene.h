@@ -15,7 +15,7 @@ namespace idh
 		void Render(HDC hdc) override;
 
 	private:
-		class GameObject* bg;
+		class GameObject* mPlayer;
 		class GameObject* title;
 	};
 }
