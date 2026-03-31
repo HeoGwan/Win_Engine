@@ -6,6 +6,8 @@
 #include "idhInput.h"
 #include "idhSceneManager.h"
 #include "idhObject.h"
+#include "idhTexture.h"
+#include "idhResources.h"
 
 namespace idh
 {
@@ -21,26 +23,16 @@ namespace idh
 	
 	void PlayScene::Initialize()
 	{
-		{
-			//bg = new Player();
-			//Transform* tr
-			//	= bg->AddComponent<Transform>();
-			//tr->SetPosition(Vector2(0, 0));
+		// 게임오브젝트 만들기전에 리소스들 전부 Load 해두면 좋다
+		bg = object::Instantiate<Player>
+			(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 
-			//tr->SetName(L"TR");
+		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
+		sr->SetTexture(bg);
 
-			//SpriteRenderer* sr
-			//	= bg->AddComponent<SpriteRenderer>();
-			//sr->SetName(L"SR");
-			//sr->ImageLoad(L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\CloudOcean.png");
-
-			//AddGameObject(bg, eLayerType::BackGround);
-
-			bg = object::Instantiate<Player>
-				(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
-			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
-			sr->ImageLoad(L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\CloudOcean.png");
-		}
+		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
+		Scene::Initialize();
 	}
 	
 	void PlayScene::Update()

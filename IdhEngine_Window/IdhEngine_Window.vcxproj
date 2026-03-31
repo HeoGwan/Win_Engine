@@ -132,6 +132,7 @@
     <ClInclude Include="idhPlayer.h" />
     <ClInclude Include="idhPlayScene.h" />
     <ClInclude Include="idhTitleScene.h" />
+    <ClInclude Include="idhLoadResources.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

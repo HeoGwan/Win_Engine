@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObjectBullet.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhResource.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhComponent.cpp">
       <Filter>Component</Filter>
     </ClCompile>
@@ -28,9 +25,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhInput.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhApplication.cpp">
-      <Filter>Helpers</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhMath.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -40,11 +34,20 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhLayer.cpp">
       <Filter>Layer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhResources.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhTexture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhApplication.cpp">
+      <Filter>High Level Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhGameObjectBullet.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhResource.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
       <Filter>Component</Filter>
     </ClInclude>
@@ -90,6 +93,15 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhObject.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhTexture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -112,6 +124,12 @@
     </Filter>
     <Filter Include="Layer">
       <UniqueIdentifier>{e292d730-0db9-4d4b-acea-c61a242c7df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{1525ceaa-f214-4804-b414-8f7dce0a1425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Texture">
+      <UniqueIdentifier>{412b1cd2-8f81-41ff-b124-59772d619738}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

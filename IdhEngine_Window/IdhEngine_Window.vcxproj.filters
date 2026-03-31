@@ -22,6 +22,7 @@
     <ClInclude Include="idhTitleScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="idhLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayer.cpp">

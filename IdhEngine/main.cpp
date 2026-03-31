@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "IdhEngine.h"
 #include "..\\IdhEngine_SOURCE\\idhApplication.h"
+#include "..\\IdhEngine_Window\\idhLoadResources.h"
 #include "..\\IdhEngine_Window\\idhLoadScene.h"
 
 //#pragma comment (lib, "..\\x64\\Debug\\IdhEngine_Window.lib")
@@ -154,6 +155,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
    // Load Scenes
+   idh::LoadResources();
    idh::LoadScenes();
 
    return TRUE;

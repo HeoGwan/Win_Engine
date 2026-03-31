@@ -1,10 +1,13 @@
 #pragma once
 #include <Windows.h>
+#include <assert.h>
+
 
 #include <vector>
 #include <algorithm>
 #include <string>
 #include <map>
+
 
 #include "idhMath.h"
 

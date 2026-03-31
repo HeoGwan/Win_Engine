@@ -18,6 +18,17 @@ namespace idh
 	void TitleScene::Initialize()
 	{
 		Scene::Initialize();
+		/*{
+			bg = object::Instantiate<GameObject>
+				(enums::eLayerType::BackGround);
+			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
+			sr->ImageLoad(L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\CloudOcean.png");
+
+			bg = object::Instantiate<GameObject>
+				(enums::eLayerType::Player, Vector2(500.0f, 100.0f));
+			sr = bg->AddComponent<SpriteRenderer>();
+			sr->ImageLoad(L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\DungreedTitle.png");
+		}*/
 	}
 
 	void TitleScene::Update()

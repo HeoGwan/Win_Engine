@@ -1,6 +1,5 @@
 #pragma once
 #include "CommonInclude.h"
-#include "idhGameObjectBullet.h"
 #include "idhComponent.h"
 
 namespace idh
