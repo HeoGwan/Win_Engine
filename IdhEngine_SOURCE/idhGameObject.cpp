@@ -1,12 +1,13 @@
 #include "idhGameObject.h"
 #include "idhInput.h"
 #include "idhTime.h"
-#include <algorithm>
+#include "idhTransform.h"
 
 namespace idh
 {
 	GameObject::GameObject()
 	{
+		initializeTransform();
 	}
 
 	GameObject::~GameObject()
@@ -48,5 +49,10 @@ namespace idh
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void GameObject::initializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 }

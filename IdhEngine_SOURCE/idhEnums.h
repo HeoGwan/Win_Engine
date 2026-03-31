@@ -1,6 +1,6 @@
 #pragma once
 
-namespace idh
+namespace idh::enums
 {
 	enum class eLayerType
 	{

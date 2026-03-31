@@ -40,6 +40,8 @@ namespace idh
 			return component;
 		}
 
+	private:
+		void initializeTransform();
 
 	private:
 		//// 게임 오브젝트의 좌표

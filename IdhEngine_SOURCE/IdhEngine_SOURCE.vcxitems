@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhScene.h" />

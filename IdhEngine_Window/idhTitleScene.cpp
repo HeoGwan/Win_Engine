@@ -1,6 +1,9 @@
 #include "idhTitleScene.h"
 #include "idhInput.h"
 #include "idhSceneManager.h"
+#include "idhGameObject.h"
+#include "idhObject.h"
+#include "idhSpriteRenderer.h"
 
 namespace idh
 {
