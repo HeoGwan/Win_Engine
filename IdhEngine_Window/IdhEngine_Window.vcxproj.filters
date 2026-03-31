@@ -4,18 +4,35 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{112e3472-ce8d-4892-bb5a-2262761a8594}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{38a8b84a-1945-4757-a2a2-66a4e153079c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="idhLoadScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="idhPlayScene.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="idhPlayer.h" />
+    <ClInclude Include="idhPlayer.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="idhPlayScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="idhTitleScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="idhPlayScene.cpp" />
-    <ClCompile Include="idhPlayer.cpp" />
+    <ClCompile Include="idhPlayer.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="idhPlayScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="idhTitleScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="IdhEngine_Window.rc" />

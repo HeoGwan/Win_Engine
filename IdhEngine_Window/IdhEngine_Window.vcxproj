@@ -131,11 +131,13 @@
     <ClInclude Include="idhLoadScene.h" />
     <ClInclude Include="idhPlayer.h" />
     <ClInclude Include="idhPlayScene.h" />
+    <ClInclude Include="idhTitleScene.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayer.cpp" />
     <ClCompile Include="idhPlayScene.cpp" />
+    <ClCompile Include="idhTitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="IdhEngine_Window.rc" />

@@ -18,9 +18,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhGameObjectBullet.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhSpriteRenderer.h" />
@@ -34,6 +39,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObjectBullet.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhSpriteRenderer.cpp" />

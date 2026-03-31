@@ -3,6 +3,8 @@
 #include "idhPlayer.h"
 #include "idhTransform.h"
 #include "idhSpriteRenderer.h"
+#include "idhInput.h"
+#include "idhSceneManager.h"
 
 namespace idh
 {
@@ -18,50 +20,20 @@ namespace idh
 	
 	void PlayScene::Initialize()
 	{
-		//GameObject* obj = new GameObject();
-		//obj->SetPosition(rand() % 1600, rand() % 900);
-		//AddGameObject(obj);
 		{
-			Player* pl = new Player();
+			bg = new Player();
 			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetPos(800, 450);
+				= bg->AddComponent<Transform>();
+			tr->SetPos(Vector2(0, 0));
 
 			tr->SetName(L"TR");
 
 			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
+				= bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
+			sr->ImageLoad(L"C:\\Users\\DSU\\Desktop\\04_Study\\02_C++\\Editor_Window\\IdhEngine\\Resources\\CloudOcean.png");
 
-			AddGameObject(pl);
-		}
-		{
-			Player* pl = new Player();
-			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetPos(300, 450);
-
-			tr->SetName(L"TR");
-
-			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(pl);
-		}
-		{
-			Player* pl = new Player();
-			Transform* tr
-				= pl->AddComponent<Transform>();
-			tr->SetPos(100, 650);
-
-			tr->SetName(L"TR");
-
-			SpriteRenderer* sr
-				= pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(pl);
+			AddGameObject(bg, eLayerType::BackGround);
 		}
 	}
 	
@@ -73,10 +45,27 @@ namespace idh
 	void PlayScene::LateUpdate()
 	{
 		Scene::LateUpdate();
+		if (Input::GetKeyDown(eKeyCode::N))
+		{
+			SceneManager::LoadScene(L"TitleScene");
+		}
 	}
 
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		wchar_t str[50] = L"Play Scene";
+		TextOut(hdc, 0, 0, str, 10);
+	}
+
+	void PlayScene::OnEnter()
+	{
+
+	}
+
+	void PlayScene::OnExit()
+	{
+		Transform* tr = bg->GetComponent<Transform>();
+		tr->SetPos(Vector2(0, 0));
 	}
 }
