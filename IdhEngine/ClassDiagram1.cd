@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="idh::Application" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAQABAABQFAQAAgIQBACAACAAAAABEAAEQAAAI=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Camera" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAQBAQAAAIAAAQAAACAAAABAAABAAACA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhCamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::GameObject" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAAIAQAAAoAAJAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Entity" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAQAAABAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Input" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAgAAQACCEAAAAwAKAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Layer" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAQAAIAAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Resource" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAAAAAAAAAIABAAAAACIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhResource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Resources" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhResources.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Scene" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAEAAAQAAgAAAIAAAQAAQAAAABJAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::SceneManager" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAQAAAABAKAAAAAAAAAgAABAAACAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhSceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Script" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAIAAAAAAAAAAAABAAAAAhAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhScript.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::SpriteRenderer" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQQAAAAAAAAAQBAAAAIIAAAACAAAAAAABAAAAAAIAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhSpriteRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Time" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAESABAAAAAAAAAAAAAAACABAAAAEAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhTime.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::Transform" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAAAAAAIAQAAAAAAgAAABAAAAAAAoA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhTransform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="idh::graphics::Texture" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAQAAAAhAAAAAAAABBQABAEAAAAAAIAAEQAAAI=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="idh::math::Vector2" Collapsed="true">
+    <Position X="16.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAABgAAAAAIA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="idh::eKeyState" Collapsed="true">
+    <Position X="20" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="idh::eKeyCode" Collapsed="true">
+    <Position X="18.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACIAAAAAAAAAAAAAAAAAAAAAAAAACACAvv//YQM=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="idh::enums::eComponentType" Collapsed="true">
+    <Position X="16.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQgIAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="idh::enums::eLayerType" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAQEAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="idh::enums::eResourceType" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIIAAAAAAAA=</HashCode>
+      <FileName>C:\Users\DSU\Desktop\04_Study\02_C++\Editor_Window\IdhEngine_SOURCE\idhEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

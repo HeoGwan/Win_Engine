@@ -15,6 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h" />
@@ -37,6 +39,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhComponent.cpp" />

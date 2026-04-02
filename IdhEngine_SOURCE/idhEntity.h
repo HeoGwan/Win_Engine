@@ -1,5 +1,6 @@
 #pragma once
 #include "CommonInclude.h"
+using namespace idh::math;
 
 namespace idh
 {

@@ -6,6 +6,7 @@ namespace idh::enums
 	{
 		Transform,
 		SpriteRenderer,
+		Animator,
 		Script,
 		Camera,
 		End,
@@ -25,6 +26,7 @@ namespace idh::enums
 	{
 		Texture,
 		AudioClip,
+		Animation,
 		Prefab,
 		End,
 	};
