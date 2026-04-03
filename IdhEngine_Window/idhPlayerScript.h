@@ -6,6 +6,14 @@ namespace idh
 	class PlayerScript : public Script
 	{
 	public:
+		enum class eState
+		{
+			SitDown,
+			Walk,
+			Sleep,
+			Attack,
+		};
+
 		PlayerScript();
 		~PlayerScript();
 
@@ -15,6 +23,11 @@ namespace idh
 		void Render(HDC hdc) override;
 
 	private:
+		void sitDown();
+		void move();
 
+	private:
+		eState mState;
+		class Animator* mAnimator;
 	};
 }

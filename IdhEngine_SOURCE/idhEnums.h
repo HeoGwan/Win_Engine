@@ -19,6 +19,7 @@ namespace idh::enums
 		//Tree
 		//Character
 		Player,
+		Particle,
 		Max = 16,
 	};
 
