@@ -12,6 +12,9 @@
 #include "idhCamera.h"
 #include "idhRenderer.h"
 #include "idhAnimator.h"
+#include "idhCat.h"
+#include "idhCatScript.h"
+
 
 namespace idh
 {
@@ -67,12 +70,46 @@ namespace idh
 		//sr->SetTexture(pacmanTexture);
 
 
-		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::Player);
-		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
-		//bgSr->SetSize(Vector2(3.0f, 3.0f));
+		//GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::Player);
+		//SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
+		////bgSr->SetSize(Vector2(3.0f, 3.0f));
 
-		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Bubble");
-		bgSr->SetTexture(bgTexture);
+		//graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Bubble");
+		//bgSr->SetTexture(bgTexture);
+
+		///CAT
+		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
+		cat->AddComponent<CatScript>();
+
+		//graphics::Texture* pacmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
+		//Animator* animator = cat->AddComponent<Animator>();
+		//animator->CreateAnimation(L"CatFrontMove", pacmanTexture
+		//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 8, 0.1f);
+		//animator->PlayAnimation(L"CatFrontMove", true);
+
+		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
+		Animator* catAnimator = cat->AddComponent<Animator>();
+		catAnimator->CreateAnimation(L"DownWalk", catTexture
+			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"RightWalk", catTexture
+			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"UpWalk", catTexture
+			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LeftWalk", catTexture
+			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"SitDown", catTexture
+			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"Grooming", catTexture
+			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LayDown", catTexture
+			, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		catAnimator->PlayAnimation(L"SitDown", false);
+		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
+		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
+		//cat->GetComponent<Transform>()->SetRotation(30.0f);
+		//sr->SetTexture(pacmanTexture);
+
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();

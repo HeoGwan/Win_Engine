@@ -132,6 +132,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="idhCat.h" />
+    <ClInclude Include="idhCatScript.h" />
     <ClInclude Include="idhLoadScene.h" />
     <ClInclude Include="idhPlayer.h" />
     <ClInclude Include="idhPlayerScript.h" />
@@ -140,6 +142,8 @@
     <ClInclude Include="idhLoadResources.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="idhCat.cpp" />
+    <ClCompile Include="idhCatScript.cpp" />
     <ClCompile Include="idhPlayer.cpp" />
     <ClCompile Include="idhPlayerScript.cpp" />
     <ClCompile Include="idhPlayScene.cpp" />

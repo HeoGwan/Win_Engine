@@ -91,15 +91,15 @@ namespace idh
 		{
 			pos.x += 100.0f * Time::DeltaTime();
 		}
-		else if (Input::GetKey(eKeyCode::A))
+		if (Input::GetKey(eKeyCode::A))
 		{
 			pos.x -= 100.0f * Time::DeltaTime();
 		}
-		else if (Input::GetKey(eKeyCode::W))
+		if (Input::GetKey(eKeyCode::W))
 		{
 			pos.y -= 100.0f * Time::DeltaTime();
 		}
-		else if (Input::GetKey(eKeyCode::S))
+		if (Input::GetKey(eKeyCode::S))
 		{
 			pos.y += 100.0f * Time::DeltaTime();
 		}

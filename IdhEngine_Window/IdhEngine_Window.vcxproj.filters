@@ -28,6 +28,12 @@
     <ClInclude Include="idhPlayerScript.h">
       <Filter>Contents\Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="idhCat.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="idhCatScript.h">
+      <Filter>Contents\Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idhPlayer.cpp">
@@ -40,6 +46,12 @@
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="idhPlayerScript.cpp">
+      <Filter>Contents\Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="idhCat.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="idhCatScript.cpp">
       <Filter>Contents\Scripts</Filter>
     </ClCompile>
   </ItemGroup>

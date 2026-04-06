@@ -18,6 +18,7 @@ namespace idh::enums
 		BackGround,
 		//Tree
 		//Character
+		Animal,
 		Player,
 		Particle,
 		Max = 16,
