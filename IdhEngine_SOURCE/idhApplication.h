@@ -16,6 +16,7 @@ namespace idh
 		void LateUpdate();
 		void Render();
 
+		HWND GetHwnd() { return mHwnd; }
 		HDC GetHdc() { return mHdc; }
 		UINT GetWidth() { return mWidth; }
 		UINT GetHeight() { return mHeight; }

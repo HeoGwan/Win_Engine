@@ -34,58 +34,27 @@ namespace idh
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
-		//camera->AddComponent<PlayerScript>();
 
 
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
 		mPlayer->AddComponent<PlayerScript>();
 
-		//graphics::Texture* pacmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
-		//Animator* animator = mPlayer->AddComponent<Animator>();
-		//animator->CreateAnimation(L"CatFrontMove", pacmanTexture
-		//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 8, 0.1f);
-		//animator->PlayAnimation(L"CatFrontMove", true);
-
-		graphics::Texture* pacmanTexture = Resources::Find<graphics::Texture>(L"Cat");
-		Animator* animator = mPlayer->AddComponent<Animator>();
-		animator->CreateAnimation(L"DownWalk", pacmanTexture
-			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		animator->CreateAnimation(L"RightWalk", pacmanTexture
-			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		animator->CreateAnimation(L"UpWalk", pacmanTexture
-			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		animator->CreateAnimation(L"LeftWalk", pacmanTexture
-			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		animator->CreateAnimation(L"SitDown", pacmanTexture
-			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		animator->CreateAnimation(L"Grooming", pacmanTexture
-			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-
-		animator->PlayAnimation(L"SitDown", false);
+		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
+		Animator* playerAnimator = mPlayer->AddComponent<Animator>();
+		playerAnimator->CreateAnimation(L"Idle", playerTex
+			, Vector2(2000.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 1, 0.1f);
+		playerAnimator->CreateAnimation(L"FrontGiveWater", playerTex
+			, Vector2(0.0f, 2000.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 12, 0.1f);
+		playerAnimator->PlayAnimation(L"Idle", false);
 
 		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
-		mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
-		//mPlayer->GetComponent<Transform>()->SetRotation(30.0f);
-		//sr->SetTexture(pacmanTexture);
 
 
-		//GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::Player);
-		//SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
-		////bgSr->SetSize(Vector2(3.0f, 3.0f));
-
-		//graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Bubble");
-		//bgSr->SetTexture(bgTexture);
 
 		///CAT
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
 		cat->AddComponent<CatScript>();
-
-		//graphics::Texture* pacmanTexture = Resources::Find<graphics::Texture>(L"MapleEffect");
-		//Animator* animator = cat->AddComponent<Animator>();
-		//animator->CreateAnimation(L"CatFrontMove", pacmanTexture
-		//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 8, 0.1f);
-		//animator->PlayAnimation(L"CatFrontMove", true);
 
 		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
 		Animator* catAnimator = cat->AddComponent<Animator>();
@@ -107,9 +76,6 @@ namespace idh
 		catAnimator->PlayAnimation(L"SitDown", false);
 		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
 		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
-		//cat->GetComponent<Transform>()->SetRotation(30.0f);
-		//sr->SetTexture(pacmanTexture);
-
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();

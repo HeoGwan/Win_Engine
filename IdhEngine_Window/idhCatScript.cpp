@@ -8,7 +8,7 @@
 namespace idh
 {
 	CatScript::CatScript()
-		: mState(CatScript::eState::SitDown)
+		: mState(CatScript::eState::Idle)
 		, mAnimator(nullptr)
 		, mTime(0.0f)
 	{
@@ -33,8 +33,8 @@ namespace idh
 
 		switch (mState)
 		{
-		case idh::CatScript::eState::SitDown:
-			sitDown();
+		case idh::CatScript::eState::Idle:
+			idle();
 			break;
 		case idh::CatScript::eState::Walk:
 			move();
@@ -61,7 +61,7 @@ namespace idh
 
 	}
 
-	void CatScript::sitDown()
+	void CatScript::idle()
 	{
 		mTime += Time::DeltaTime();
 		if (mTime > 3.0f)
@@ -87,7 +87,7 @@ namespace idh
 			}
 			else
 			{
-				mState = CatScript::eState::SitDown;
+				mState = CatScript::eState::Idle;
 				mAnimator->PlayAnimation(L"SitDown", false);
 			}
 		}

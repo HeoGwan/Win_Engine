@@ -83,7 +83,7 @@ namespace idh
 		mWidth = rect.right - rect.left;
 		mHeight = rect.bottom - rect.top;
 
-		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+		SetWindowPos(mHwnd, nullptr, 1500, 300, mWidth, mHeight, 0);
 		ShowWindow(mHwnd, true);
 	}
 
