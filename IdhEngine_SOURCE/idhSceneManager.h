@@ -25,9 +25,23 @@ namespace idh
 		static void Update();
 		static void LateUpdate();
 		static void Render(HDC hdc);
+		static void Release();
+
+		// ΩÃ±€≈Ê
+	//	static SceneManager& GetInst()
+	//	{
+	//		static SceneManager sceneManager;
+	//		return sceneManager;
+	//	}
+
+	//private:
+	//	SceneManager();
+	//	~SceneManager();
+
 	private:
-		//static std::vector<Scene*> mScene;
 		static std::map<std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
 	};
+
+	//static SceneManager sceneManager;
 }

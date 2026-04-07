@@ -4,6 +4,10 @@
 #include "idhTime.h"
 #include "idhGameObject.h"
 #include "idhAnimator.h"
+#include "idhCat.h"
+#include "idhCatScript.h"
+#include "idhObject.h"
+#include "idhResources.h"
 
 namespace idh
 {
@@ -57,6 +61,33 @@ namespace idh
 	void PlayerScript::Render(HDC hdc)
 	{
 
+	}
+
+	void PlayerScript::AttackEffect()
+	{
+		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
+		cat->AddComponent<CatScript>();
+
+		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
+		Animator* catAnimator = cat->AddComponent<Animator>();
+		catAnimator->CreateAnimation(L"DownWalk", catTexture
+			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"RightWalk", catTexture
+			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"UpWalk", catTexture
+			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LeftWalk", catTexture
+			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"SitDown", catTexture
+			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"Grooming", catTexture
+			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		catAnimator->CreateAnimation(L"LayDown", catTexture
+			, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		catAnimator->PlayAnimation(L"SitDown", false);
+		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
+		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 	}
 
 	void PlayerScript::idle()

@@ -2,6 +2,7 @@
 #include "idhInput.h"
 #include "idhTime.h"
 #include "idhSceneManager.h"
+#include "idhResources.h"
 
 namespace idh
 {
@@ -58,6 +59,12 @@ namespace idh
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
+	}
+
+	void Application::Release()
+	{
+		SceneManager::Release();
+		Resources::Release();
 	}
 
 	void Application::clearRenderTarget()

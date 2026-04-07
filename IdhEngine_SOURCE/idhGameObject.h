@@ -25,7 +25,6 @@ namespace idh
 
 			mComponents[(UINT)comp->GetType()] = comp;
 
-			mComponents.push_back(comp);
 			return comp;
 		}
 

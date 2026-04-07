@@ -3,12 +3,14 @@
 namespace idh
 {
 	Component::Component(enums::eComponentType type)
-		: mType(type)
+		: mOwner(nullptr)
+		, mType(type)
 	{
 	}
 
 	Component::~Component()
 	{
+
 	}
 
 	void Component::Initialize()
