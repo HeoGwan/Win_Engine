@@ -6,6 +6,7 @@
 namespace idh
 {
 	GameObject::GameObject()
+		: mState(GameObject::eState::Active)
 	{
 		mComponents.resize((UINT)enums::eComponentType::End);
 		initializeTransform();

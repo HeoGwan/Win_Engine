@@ -56,28 +56,41 @@ namespace idh
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
 		cat->AddComponent<CatScript>();
 
-		cameraComp->SetTarget(cat);
+		//cameraComp->SetTarget(cat);
 
 		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
 		Animator* catAnimator = cat->AddComponent<Animator>();
-		catAnimator->CreateAnimation(L"DownWalk", catTexture
-			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"RightWalk", catTexture
-			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"UpWalk", catTexture
-			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"LeftWalk", catTexture
-			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"SitDown", catTexture
-			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"Grooming", catTexture
-			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		catAnimator->CreateAnimation(L"LayDown", catTexture
-			, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"DownWalk", catTexture
+		//	, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"RightWalk", catTexture
+		//	, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"UpWalk", catTexture
+		//	, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"LeftWalk", catTexture
+		//	, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"SitDown", catTexture
+		//	, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"Grooming", catTexture
+		//	, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//catAnimator->CreateAnimation(L"LayDown", catTexture
+		//	, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
 
-		catAnimator->PlayAnimation(L"SitDown", false);
+		//catAnimator->PlayAnimation(L"SitDown", false);
+		catAnimator->CreateAnimationByFolder(L"MushroomIdle", L"..\\Resources\\Mushroom", Vector2::Zero, 0.1f);
+
+		catAnimator->PlayAnimation(L"MushroomIdle", true);
+
 		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
 		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
+
+
+		//GameObject* sheet = object::Instantiate<GameObject>(enums::eLayerType::Particle);
+		//SpriteRenderer* sheetSR = sheet->AddComponent<SpriteRenderer>();
+		//sheetSR->SetName(L"Sheet");
+
+		//graphics::Texture* mrIdle = Resources::Find<graphics::Texture>(L"MushroomIdle");
+		//sheetSR->SetTexture(mrIdle);
+
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();

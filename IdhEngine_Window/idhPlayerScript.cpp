@@ -100,21 +100,6 @@ namespace idh
 			Vector2 mousePos = Input::GetMousePosition();
 			int a = 0;
 		}
-		//if (Input::GetKey(eKeyCode::A))
-		//{
-		//	mState = PlayerScript::eState::Walk;
-		//	mAnimator->PlayAnimation(L"LeftWalk");
-		//}
-		//if (Input::GetKey(eKeyCode::W))
-		//{
-		//	mState = PlayerScript::eState::Walk;
-		//	mAnimator->PlayAnimation(L"UpWalk");
-		//}
-		//if (Input::GetKey(eKeyCode::S))
-		//{
-		//	mState = PlayerScript::eState::Walk;
-		//	mAnimator->PlayAnimation(L"DownWalk");
-		//}
 	}
 
 	void PlayerScript::move()

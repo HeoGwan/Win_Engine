@@ -1,6 +1,7 @@
 #pragma once
 #include "CommonInclude.h"
 #include "idhComponent.h"
+//#include "idhObject.h"
 
 namespace idh
 {
@@ -8,6 +9,16 @@ namespace idh
 	class GameObject
 	{
 	public:
+		//friend void object::Destroy(GameObject* obj);
+
+		enum class eState
+		{
+			Active,
+			Paused,
+			Dead,
+			End
+		};
+
 		GameObject();
 		~GameObject();
 
@@ -41,10 +52,19 @@ namespace idh
 			return component;
 		}
 
+		eState GetActive() { return mState; }
+		void SetActive(bool power)
+		{
+			if (power == true) mState = eState::Active;
+			if (power == false) mState = eState::Paused;
+		}
+		void Death() { mState = eState::Dead; }
+
 	private:
 		void initializeTransform();
 
 	private:
+		eState mState;
 		std::vector<Component*> mComponents;
 	};
 }

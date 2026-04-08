@@ -4,6 +4,7 @@
 #include "idhTime.h"
 #include "idhGameObject.h"
 #include "idhAnimator.h"
+#include "idhObject.h"
 
 namespace idh
 {
@@ -11,6 +12,7 @@ namespace idh
 		: mState(CatScript::eState::Idle)
 		, mAnimator(nullptr)
 		, mTime(0.0f)
+		, mDeathTime(0.0f)
 	{
 
 	}
@@ -27,6 +29,12 @@ namespace idh
 
 	void CatScript::Update()
 	{
+		mDeathTime += Time::DeltaTime();
+		if (mDeathTime > 6.0f)
+		{
+			//object::Destroy(GetOwner());
+		}
+
 		if (mAnimator == nullptr)
 			mAnimator = GetOwner()->GetComponent<Animator>();
 

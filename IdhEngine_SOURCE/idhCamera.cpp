@@ -33,7 +33,8 @@ namespace idh
 		if (mTarget)
 		{
 			Transform* tr = mTarget->GetComponent<Transform>();
-			mLookPosition = tr->GetPosition();
+			if (tr != nullptr)
+				mLookPosition = tr->GetPosition();
 		}
 		else
 		{

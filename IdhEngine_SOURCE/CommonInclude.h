@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <assert.h>
 #include <time.h>
+#include <iostream>
 
 
 #include <vector>
@@ -9,6 +10,7 @@
 #include <string>
 #include <map>
 #include <functional>
+#include <filesystem>
 
 
 #include "idhMath.h"

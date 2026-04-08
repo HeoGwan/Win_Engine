@@ -44,7 +44,6 @@ namespace idh
 		if (mTexture->GetTextureType()
 			== graphics::Texture::eTextureType::Bmp)
 		{
-
 			TransparentBlt(hdc, pos.x, pos.y
 				, mTexture->GetWidth() * mSize.x * scale.x , mTexture->GetHeight() * mSize.y * scale.y
 				, mTexture->GetHdc(), 0, 0, mTexture->GetWidth(), mTexture->GetHeight()
