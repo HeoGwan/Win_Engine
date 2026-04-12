@@ -12,6 +12,6 @@ namespace idh
 		void Render(HDC hdc) override;
 
 	private:
-
+		
 	};
 }

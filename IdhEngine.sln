@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IdhEngine", "IdhEngine\IdhEngine.vcxproj", "{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor_Window", "Editor_Window\Editor_Window.vcxproj", "{A53A6970-49A0-422B-8E85-BB9AD3FCD7D5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IdhEngine_Window", "IdhEngine_Window\IdhEngine_Window.vcxproj", "{595B4F27-5AD5-4E4B-9CF2-649BD4FB3BDC}"
 EndProject

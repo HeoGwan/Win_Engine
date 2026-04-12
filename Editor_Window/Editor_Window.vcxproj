@@ -24,6 +24,7 @@
     <ProjectGuid>{a53a6970-49a0-422b-8e85-bb9ad3fcd7d5}</ProjectGuid>
     <RootNamespace>IdhEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Editor_Window</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

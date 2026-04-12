@@ -14,6 +14,8 @@
 #include "idhAnimator.h"
 #include "idhCat.h"
 #include "idhCatScript.h"
+#include "idhBoxCollider2D.h"
+#include "idhCollisionManager.h"
 
 
 namespace idh
@@ -30,6 +32,8 @@ namespace idh
 	
 	void PlayScene::Initialize()
 	{
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
+
 		// main camera
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::Particle, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
@@ -38,6 +42,8 @@ namespace idh
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
+		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+		collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
 		Animator* playerAnimator = mPlayer->AddComponent<Animator>();
@@ -49,7 +55,7 @@ namespace idh
 
 		playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
 
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 250.0f));
 
 
 		///CAT
@@ -60,6 +66,11 @@ namespace idh
 
 		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
 		Animator* catAnimator = cat->AddComponent<Animator>();
+
+		BoxCollider2D* boxCatCollider = cat->AddComponent<BoxCollider2D>();
+
+		boxCatCollider->SetOffset(Vector2(-50.0f, -50.0f));
+
 		//catAnimator->CreateAnimation(L"DownWalk", catTexture
 		//	, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
 		//catAnimator->CreateAnimation(L"RightWalk", catTexture
@@ -80,17 +91,8 @@ namespace idh
 
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
-		cat->GetComponent<Transform>()->SetPosition(Vector2(200.0f, 200.0f));
-		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
-
-
-		//GameObject* sheet = object::Instantiate<GameObject>(enums::eLayerType::Particle);
-		//SpriteRenderer* sheetSR = sheet->AddComponent<SpriteRenderer>();
-		//sheetSR->SetName(L"Sheet");
-
-		//graphics::Texture* mrIdle = Resources::Find<graphics::Texture>(L"MushroomIdle");
-		//sheetSR->SetTexture(mrIdle);
-
+		cat->GetComponent<Transform>()->SetPosition(Vector2(360.0f, 420.0f));
+		//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();

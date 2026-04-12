@@ -3,6 +3,7 @@
 #include "idhTime.h"
 #include "idhSceneManager.h"
 #include "idhResources.h"
+#include "idhCollisionManager.h"
 
 namespace idh
 {
@@ -28,6 +29,7 @@ namespace idh
 		createBuffer(width, height);
 		initializeEtc();
 
+		CollisionManager::Initialize();
 		SceneManager::Initialize();
 	}
 
@@ -44,11 +46,13 @@ namespace idh
 		Input::Update();
 		Time::Update();
 
+		CollisionManager::Update();
 		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
 	{
+		CollisionManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 	
@@ -57,6 +61,7 @@ namespace idh
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
+		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
@@ -76,7 +81,13 @@ namespace idh
 	void Application::clearRenderTarget()
 	{
 		// clear
+		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128, 128, 128));
+		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
+
 		Rectangle(mBackHdc, -1, -1, 1601, 901);
+
+		(HBRUSH)SelectObject(mHdc, oldBrush);
+		DeleteObject(grayBrush);
 	}
 
 	void Application::copyRenderTarget(HDC source, HDC dest)
@@ -96,7 +107,7 @@ namespace idh
 		mWidth = rect.right - rect.left;
 		mHeight = rect.bottom - rect.top;
 
-		SetWindowPos(mHwnd, nullptr, 1500, 300, mWidth, mHeight, 0);
+		SetWindowPos(mHwnd, nullptr, 200, 200, mWidth, mHeight, 0);
 		ShowWindow(mHwnd, true);
 	}
 

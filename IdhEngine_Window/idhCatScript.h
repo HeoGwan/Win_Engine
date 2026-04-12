@@ -33,6 +33,9 @@ namespace idh
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
+		void SetPlayer(GameObject* player) { mPlayer = player; }
+
+		Vector2 mDest;
 	private:
 		void idle();
 		void move();
@@ -40,11 +43,15 @@ namespace idh
 		void playerWalkAnimationByDirection(eDirection mDirection);
 		void translate(Transform* tr);
 
+
 	private:
 		eState mState;
 		eDirection mDirection;
 		class Animator* mAnimator;
 		float mTime;
 		float mDeathTime;
+
+		GameObject* mPlayer;
+		float mRadian;
 	};
 }

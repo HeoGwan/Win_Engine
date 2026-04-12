@@ -9,12 +9,9 @@
 #include <algorithm>
 #include <string>
 #include <map>
+#include <bitset>
 #include <functional>
 #include <filesystem>
-#include <math.h>
-
-
-#include "idhMath.h"
 
 #include <mmsystem.h>
 #include <dinput.h>
@@ -25,3 +22,4 @@
 #pragma comment(lib, "gdiplus.lib")
 
 #include "idhEnums.h"
+#include "idhMath.h"
