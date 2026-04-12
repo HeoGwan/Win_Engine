@@ -33,4 +33,11 @@ namespace idh::enums
 		Prefab,
 		End,
 	};
+
+	enum class eColliderType
+	{
+		Circle2D,
+		Rect2D,
+		End,
+	};
 }

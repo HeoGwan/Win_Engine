@@ -1,10 +1,17 @@
 #include "idhCollider.h"
+#include "idhScript.h"
+#include "idhGameObject.h"
 
 namespace idh
 {
-	Collider::Collider()
+	UINT32 Collider::mCollisionID = 1;
+
+	Collider::Collider(eColliderType type)
 		: Component(enums::eComponentType::Collider)
 		, mOffset(Vector2::Zero)
+		, mType(type)
+		, mID(mCollisionID++)
+		, mSize(Vector2::One)
 	{
 
 	}
@@ -30,5 +37,23 @@ namespace idh
 
 	void Collider::Render(HDC hdc)
 	{
+	}
+
+	void Collider::OnCollisionEnter(Collider* other)
+	{
+		Script* script = GetOwner()->GetComponent<Script>();
+		script->OnCollisionEnter(other);
+	}
+
+	void Collider::OnCollisionStay(Collider* other)
+	{
+		Script* script = GetOwner()->GetComponent<Script>();
+		script->OnCollisionStay(other);
+	}
+
+	void Collider::OnCollisionExit(Collider* other)
+	{
+		Script* script = GetOwner()->GetComponent<Script>();
+		script->OnCollisionExit(other);
 	}
 }

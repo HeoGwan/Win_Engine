@@ -2,10 +2,13 @@
 #include "idhTransform.h"
 #include "idhGameObject.h""
 
+#include "idhRenderer.h"
+#include "idhCamera.h"
+
 namespace idh
 {
 	BoxCollider2D::BoxCollider2D()
-		: Collider()
+		: Collider(enums::eColliderType::Rect2D)
 	{
 
 	}
@@ -34,6 +37,9 @@ namespace idh
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+
+		if (renderer::mainCamera)
+			pos = renderer::mainCamera->CalculatePosition(pos);
 
 		Vector2 offset = GetOffset();
 

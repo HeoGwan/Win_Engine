@@ -24,6 +24,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhGameObject.h" />
@@ -52,6 +53,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhInput.cpp" />

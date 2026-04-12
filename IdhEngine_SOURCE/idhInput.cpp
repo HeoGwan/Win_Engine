@@ -26,6 +26,19 @@ namespace idh
 		updateKeys();
 	}
 
+	void Input::Render(HDC hdc)
+	{
+		static float time = 0.0f;
+
+		Vector2 pos = GetMousePosition();
+
+		wchar_t str[50] = L"";
+		swprintf_s(str, 50, L"Mouse Pos : [%d, %d]", (int)pos.x, (int)pos.y);
+		int len = wcsnlen_s(str, 50);
+
+		TextOut(hdc, 500, 0, str, len);
+	}
+
 	void Input::createKeys()
 	{
 		for (size_t i = 0; i < (UINT)eKeyCode::End; i++)

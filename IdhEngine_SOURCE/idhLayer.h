@@ -19,7 +19,14 @@ namespace idh
 		virtual void Destroy();
 
 		void AddGameObject(GameObject* gameObject);
+		void EraseGameObject(GameObject* eraseGameObj);
 		const std::vector<GameObject*> GetGameObjects() { return mGameObjects; }
+
+	private:
+		void findDeadGameObjects(OUT std::vector<GameObject*>& gameObjs);
+		void deleteGameObjects(std::vector<GameObject*> deleteObjs);
+		void eraseDeadGameObjects();
+
 	private:
 		//eLayerType mType;
 		std::vector<GameObject*> mGameObjects;

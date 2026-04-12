@@ -1,9 +1,11 @@
 #include "idhSceneManager.h"
+#include "idhDontDestroyOnLoad.h"
 
 namespace idh
 {
 	std::map<std::wstring, Scene*> SceneManager::mScene = {};
 	Scene* SceneManager::mActiveScene = nullptr;
+	Scene* SceneManager::mDontDestroyScene = nullptr;
 
 	Scene* SceneManager::LoadScene(const std::wstring& name)
 	{
@@ -24,27 +26,31 @@ namespace idh
 
 	void SceneManager::Initialize()
 	{
-
+		mDontDestroyScene = CreateScene<DontDestroyOnLoad>(L"DontDestroyOnLoad");
 	}
 	
 	void SceneManager::Update()
 	{
 		mActiveScene->Update();
+		mDontDestroyScene->Update();
 	}
 	
 	void SceneManager::LateUpdate()
 	{
 		mActiveScene->LateUpdate();
+		mDontDestroyScene->LateUpdate();
 	}
 	
 	void SceneManager::Render(HDC hdc)
 	{
 		mActiveScene->Render(hdc);
+		mDontDestroyScene->Render(hdc);
 	}
 
 	void SceneManager::Destroy()
 	{
 		mActiveScene->Destroy();
+		mDontDestroyScene->Destroy();
 	}
 
 	void SceneManager::Release()

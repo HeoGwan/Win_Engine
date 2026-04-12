@@ -20,6 +20,7 @@ namespace idh
 		}
 		static Scene* LoadScene(const std::wstring& name);
 		static Scene* GetActiveScene() { return mActiveScene; }
+		static Scene* GetDontDestroyScene() { return mDontDestroyScene; }
 
 		static void Initialize();
 		static void Update();
@@ -28,21 +29,9 @@ namespace idh
 		static void Destroy();
 		static void Release();
 
-		// ΩÃ±€≈Ê
-	//	static SceneManager& GetInst()
-	//	{
-	//		static SceneManager sceneManager;
-	//		return sceneManager;
-	//	}
-
-	//private:
-	//	SceneManager();
-	//	~SceneManager();
-
 	private:
 		static std::map<std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
+		static Scene* mDontDestroyScene;
 	};
-
-	//static SceneManager sceneManager;
 }

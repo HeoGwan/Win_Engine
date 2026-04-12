@@ -73,6 +73,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCollisionManager.cpp">
       <Filter>Collision</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -156,6 +157,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCollisionManager.h">
       <Filter>Collision</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">

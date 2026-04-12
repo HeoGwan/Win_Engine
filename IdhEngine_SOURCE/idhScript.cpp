@@ -1,4 +1,5 @@
 #include "idhScript.h"
+#include "idhCollider.h"
 
 namespace idh
 {
@@ -29,6 +30,21 @@ namespace idh
 	}
 
 	void Script::Render(HDC hdc)
+	{
+
+	}
+
+	void Script::OnCollisionEnter(Collider* other)
+	{
+
+	}
+
+	void Script::OnCollisionStay(Collider* other)
+	{
+
+	}
+
+	void Script::OnCollisionExit(Collider* other)
 	{
 
 	}

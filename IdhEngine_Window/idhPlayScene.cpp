@@ -15,6 +15,7 @@
 #include "idhCat.h"
 #include "idhCatScript.h"
 #include "idhBoxCollider2D.h"
+#include "idhCircleCollider2D.h"
 #include "idhCollisionManager.h"
 
 
@@ -40,9 +41,12 @@ namespace idh
 		renderer::mainCamera = cameraComp;
 
 
-		mPlayer = object::Instantiate<Player>(enums::eLayerType::Particle);
+		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+		object::DontDestroyOnLoad(mPlayer);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
+
 		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+		//CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 		collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
@@ -55,7 +59,7 @@ namespace idh
 
 		playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
 
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 250.0f));
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(350.0f, 250.0f));
 
 
 		///CAT
@@ -67,7 +71,8 @@ namespace idh
 		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"Cat");
 		Animator* catAnimator = cat->AddComponent<Animator>();
 
-		BoxCollider2D* boxCatCollider = cat->AddComponent<BoxCollider2D>();
+		//BoxCollider2D* boxCatCollider = cat->AddComponent<BoxCollider2D>();
+		CircleCollider2D* boxCatCollider = cat->AddComponent<CircleCollider2D>();
 
 		boxCatCollider->SetOffset(Vector2(-50.0f, -50.0f));
 
@@ -91,7 +96,7 @@ namespace idh
 
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
-		cat->GetComponent<Transform>()->SetPosition(Vector2(360.0f, 420.0f));
+		cat->GetComponent<Transform>()->SetPosition(Vector2(200, 200.0f));
 		//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
@@ -121,12 +126,11 @@ namespace idh
 
 	void PlayScene::OnEnter()
 	{
-
+		Scene::OnEnter();
 	}
 
 	void PlayScene::OnExit()
 	{
-		//Transform* tr = bg->GetComponent<Transform>();
-		//tr->SetPosition(Vector2(0, 0));
+		Scene::OnExit();
 	}
 }

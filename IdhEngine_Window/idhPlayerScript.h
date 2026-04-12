@@ -25,6 +25,10 @@ namespace idh
 
 		void AttackEffect();
 
+		void OnCollisionEnter(class Collider* other);
+		void OnCollisionStay(class Collider* other);
+		void OnCollisionExit(class Collider* other);
+
 	private:
 		void idle();
 		void move();

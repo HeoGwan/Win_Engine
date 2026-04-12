@@ -3,11 +3,11 @@
 
 namespace idh
 {
-	class TitleScene : public Scene
+	class DontDestroyOnLoad : public Scene
 	{
 	public:
-		TitleScene();
-		~TitleScene();
+		DontDestroyOnLoad();
+		~DontDestroyOnLoad();
 
 		void Initialize() override;
 		void Update() override;
@@ -18,7 +18,5 @@ namespace idh
 		void OnExit() override;
 
 	private:
-		class GameObject* mPlayer;
-		class GameObject* title;
 	};
 }

@@ -61,6 +61,7 @@ namespace idh
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
+		Input::Render(mBackHdc);
 		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 

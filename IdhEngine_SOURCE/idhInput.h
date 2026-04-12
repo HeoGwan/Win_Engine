@@ -34,6 +34,7 @@ namespace idh
 
 		static void Initialize();
 		static void Update();
+		static void Render(HDC hdc);
 
 		__forceinline static bool GetKeyDown(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Down; }
 		__forceinline static bool GetKeyUp(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Up; }

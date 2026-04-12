@@ -8,6 +8,7 @@
 #include "idhCatScript.h"
 #include "idhObject.h"
 #include "idhResources.h"
+#include "idhCollider.h"
 
 namespace idh
 {
@@ -94,6 +95,21 @@ namespace idh
 
 		Vector2 mousePos = Input::GetMousePosition();
 		catSrc->mDest = mousePos;
+	}
+
+	void PlayerScript::OnCollisionEnter(class Collider* other)
+	{
+		other->GetOwner()->GetComponent<Transform>()->SetPosition(Vector2(400.0f, 500.0f));
+	}
+
+	void PlayerScript::OnCollisionStay(class Collider* other)
+	{
+		int a = 0;
+	}
+
+	void PlayerScript::OnCollisionExit(class Collider* other)
+	{
+		int a = 0;
 	}
 
 	void PlayerScript::idle()
