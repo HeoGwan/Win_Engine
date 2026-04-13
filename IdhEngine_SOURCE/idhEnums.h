@@ -18,6 +18,7 @@ namespace idh::enums
 		None,
 		BackGround,
 		//Tree
+		Tile,
 		//Character
 		Animal,
 		Player,

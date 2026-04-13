@@ -74,6 +74,9 @@
       <Filter>Collision</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.cpp">
+      <Filter>TileMapRenderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -158,6 +161,9 @@
       <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.h">
+      <Filter>TileMapRenderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -207,6 +213,9 @@
     </Filter>
     <Filter Include="Collision">
       <UniqueIdentifier>{d645a65a-3632-463b-9c9c-deff04a9879e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TileMapRenderer">
+      <UniqueIdentifier>{a5714df3-9441-4db1-a120-d22919f8db12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
