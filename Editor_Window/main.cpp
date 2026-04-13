@@ -3,11 +3,15 @@
 
 #include "framework.h"
 #include "IdhEngine.h"
-#include "..\\IdhEngine_SOURCE\\idhApplication.h"
+
+#include "..\\IdhEngine_SOURCE\\\idhApplication.h"
+#include "..\\IdhEngine_SOURCE\\idhResources.h"
+#include "..\\IdhEngine_SOURCE\\idhTexture.h"
+
 #include "..\\IdhEngine_Window\\idhLoadResources.h"
 #include "..\\IdhEngine_Window\\idhLoadScene.h"
+#include "..\\IdhEngine_Window\\idhToolScene.h"
 
-//#pragma comment (lib, "..\\x64\\Debug\\IdhEngine_Window.lib")
 idh::Application application;
 
 ULONG_PTR gpToken;
@@ -24,7 +28,6 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 ATOM                MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-LRESULT CALLBACK    WndTileProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
@@ -147,8 +150,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
-   HWND ToolHWnd = CreateWindowW(L"TILEWINDOW", L"TILEWINDOW", WS_OVERLAPPEDWINDOW,
-       CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
+   HWND ToolHWnd = CreateWindowW(L"TILEWINDOW", L"TileWindow", WS_OVERLAPPEDWINDOW,
+       0, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
    application.Initialize(hWnd, width, height);
 
@@ -160,8 +163,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
-   ShowWindow(ToolHWnd, nCmdShow);
-   UpdateWindow(ToolHWnd);
+   //ShowWindow(ToolHWnd, nCmdShow);
+
 
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
@@ -171,6 +174,20 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    int a = 0;
    srand((unsigned int)(&a));
+
+   // Tile 윈도우 크기 조정
+   idh::graphics::Texture* texture
+       = idh::Resources::Find<idh::graphics::Texture>(L"SpringFloor");
+
+   RECT rect = { 0, 0, texture->GetWidth(), texture->GetHeight() };
+   AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+
+   UINT toolWidth = rect.right - rect.left;
+   UINT toolHeight = rect.bottom - rect.top;
+
+   SetWindowPos(ToolHWnd, nullptr, width, 0, toolWidth, toolHeight, 0);
+   ShowWindow(ToolHWnd, true);
+   UpdateWindow(ToolHWnd);
 
    return TRUE;
 }
@@ -219,44 +236,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             EndPaint(hWnd, &ps);
         }
         break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
-}
-
-LRESULT CALLBACK WndTileProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_COMMAND:
-    {
-        int wmId = LOWORD(wParam);
-        // 메뉴 선택을 구문 분석합니다:
-        switch (wmId)
-        {
-        case IDM_ABOUT:
-            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-            break;
-        case IDM_EXIT:
-            DestroyWindow(hWnd);
-            break;
-        default:
-            return DefWindowProc(hWnd, message, wParam, lParam);
-        }
-    }
-    break;
-    case WM_PAINT:
-    {
-        PAINTSTRUCT ps;
-        HDC hdc = BeginPaint(hWnd, &ps);
-
-        EndPaint(hWnd, &ps);
-    }
-    break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

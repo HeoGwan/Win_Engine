@@ -77,6 +77,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.cpp">
       <Filter>TileMapRenderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhDestroy.cpp">
+      <Filter>Destroy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -164,6 +167,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.h">
       <Filter>TileMapRenderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhDestroy.h">
+      <Filter>Destroy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -216,6 +222,9 @@
     </Filter>
     <Filter Include="TileMapRenderer">
       <UniqueIdentifier>{a5714df3-9441-4db1-a120-d22919f8db12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Destroy">
+      <UniqueIdentifier>{cf8524d6-50ed-4316-a82d-aaf7b4232d00}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

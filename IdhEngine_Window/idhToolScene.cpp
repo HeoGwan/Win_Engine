@@ -6,6 +6,7 @@
 #include "idhTile.h"
 #include "idhTilemapRenderer.h"
 #include "idhResources.h"
+#include "idhInput.h"
 
 namespace idh
 {
@@ -42,6 +43,20 @@ namespace idh
 	void ToolScene::LateUpdate()
 	{
 		Scene::LateUpdate();
+
+		if (Input::GetKeyDown(eKeyCode::LButton))
+		{
+			Vector2 pos = Input::GetMousePosition();
+
+			int idxX = pos.x / TilemapRenderer::TileSize.x;
+			int idxY = pos.y / TilemapRenderer::TileSize.y;
+
+			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
+			TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
+			tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
+
+			tile->SetPosition(idxX, idxY);
+		}
 	}
 
 	void ToolScene::Render(HDC hdc)
@@ -50,14 +65,14 @@ namespace idh
 
 		for (size_t i = 0; i < 50; i++)
 		{
-			MoveToEx(hdc, (16 * 3) * i, 0, NULL);
-			LineTo(hdc, (16 * 3) * i, 1000);
+			MoveToEx(hdc, TilemapRenderer::TileSize.x * i, 0, NULL);
+			LineTo(hdc, TilemapRenderer::TileSize.x * i, 1000);
 		}
 
 		for (size_t i = 0; i < 50; i++)
 		{
-			MoveToEx(hdc, 0, (16 * 3) * i, NULL);
-			LineTo(hdc, 1000, (16 * 3) * i);
+			MoveToEx(hdc, 0, TilemapRenderer::TileSize.y * i, NULL);
+			LineTo(hdc, 1000, TilemapRenderer::TileSize.y * i);
 		}
 	}
 
@@ -70,4 +85,56 @@ namespace idh
 	{
 		Scene::OnExit();
 	}
+}
+
+LRESULT CALLBACK WndTileProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+    case WM_LBUTTONDOWN:
+    {
+        //int wmId = LOWORD(wParam);
+        //// 메뉴 선택을 구문 분석합니다:
+        //switch (wmId)
+        //{
+        //case IDM_ABOUT:
+        //    DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+        //    break;
+        //case IDM_EXIT:
+        //    DestroyWindow(hWnd);
+        //    break;
+        //default:
+        //    return DefWindowProc(hWnd, message, wParam, lParam);
+        //}
+    }
+    break;
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+		// Rectangle(100, 100, 200, 200);
+		idh::graphics::Texture* texture
+			= idh::Resources::Find<idh::graphics::Texture>(L"SpringFloor");
+
+		TransparentBlt(hdc
+			, 0, 0
+			, texture->GetWidth()
+			, texture->GetHeight()
+			, texture->GetHdc()
+			, 0, 0
+			, texture->GetWidth()
+			, texture->GetHeight()
+			, RGB(255, 0, 255));
+
+        EndPaint(hWnd, &ps);
+    }
+    break;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+    return 0;
 }

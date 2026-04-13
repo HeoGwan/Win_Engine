@@ -59,8 +59,8 @@ namespace idh
 			if (power == false) mState = eState::Paused;
 		}
 		bool IsActive() { return mState == eState::Active; }
-		bool IsDead() { return mState == eState::Dead; }
 		void Death() { mState = eState::Dead; }
+		bool IsDead() { return mState == eState::Dead; }
 		void SetLayerType(eLayerType layerType) { mLayerType = layerType; }
 		eLayerType GetLayerType() { return mLayerType; }
 

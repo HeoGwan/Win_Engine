@@ -35,9 +35,12 @@ namespace idh::object
 		return gameObject;
 	}
 
-	static void Destroy(GameObject* obj)
+	static void Destroy(GameObject* gameObject)
 	{
-		obj->Death();
+		if (gameObject == nullptr)
+			return;
+
+		gameObject->Death();
 	}
 
 	static void DontDestroyOnLoad(GameObject* gameObject)

@@ -35,6 +35,7 @@ namespace idh
 		if (mDeathTime > 6.0f)
 		{
 			//object::Destroy(GetOwner());
+			//object::Destroy(GetOwner());
 		}
 
 		if (mAnimator == nullptr)

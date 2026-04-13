@@ -1,19 +1,21 @@
 #include "idhTilemapRenderer.h"
-#include "idhTransform.h"
 #include "idhGameObject.h"
-#include "idhComponent.h"
+#include "idhTransform.h"
+#include "idhTexture.h"
 #include "idhRenderer.h"
 
 namespace idh
 {
+	Vector2 TilemapRenderer::TileSize = Vector2::One;
+
 	TilemapRenderer::TilemapRenderer()
 		: Component(eComponentType::SpriteRenderer)
 		, mTexture(nullptr)
 		, mSize(3.0f, 3.0f)
-		, mIndex(8, 7)
+		, mIndex(0, 0)
 		, mTileSize(16.0f, 16.0f)
 	{
-
+		TileSize = mTileSize * mSize;
 	}
 
 	TilemapRenderer::~TilemapRenderer()
@@ -59,24 +61,24 @@ namespace idh
 				func.SourceConstantAlpha = 255; // 0(transparent) ~ 255(Opaque)
 
 				AlphaBlend(hdc
-					, mTexture->GetWidth() * mSize.x * scale.x
-					, mTexture->GetHeight() * mSize.y * scale.y
-					, mTexture->GetWidth() * scale.x
-					, mTexture->GetHeight() * scale.y
+					, mTileSize.x * mSize.x * scale.x
+					, mTileSize.y * mSize.y * scale.y
+					, mTileSize.x * scale.x
+					, mTileSize.y * scale.y
 					, mTexture->GetHdc()
-					, 0, 0
-					, mTexture->GetWidth(), mTexture->GetHeight()
+					, mIndex.x * mTileSize.x, mIndex.y * mTileSize.y
+					, mTileSize.x, mTileSize.y
 					, func);
 			}
 			else
 			{
 				TransparentBlt(hdc
 					, pos.x, pos.y
-					, mTexture->GetWidth() * mSize.x * scale.x
-					, mTexture->GetHeight() * mSize.y * scale.y
+					, mTileSize.x * mSize.x * scale.x
+					, mTileSize.y * mSize.y * scale.y
 					, mTexture->GetHdc()
-					, 0, 0
-					, mTexture->GetWidth(), mTexture->GetHeight()
+					, mIndex.x * mTileSize.x, mIndex.y * mTileSize.y
+					, mTileSize.x, mTileSize.y
 					, RGB(255, 0, 255));
 			}
 		}
