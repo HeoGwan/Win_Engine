@@ -49,11 +49,10 @@ namespace idh
 		HPEN greenPen = (HPEN)CreatePen(PS_SOLID, 2, RGB(0, 255, 0));
 		HPEN oldPen = (HPEN)SelectObject(hdc, greenPen);
 
-		Rectangle(hdc
-			, pos.x + offset.x
+		Rectangle(hdc, pos.x + offset.x
 			, pos.y + offset.y
-			, pos.x + offset.x + 100
-			, pos.y + offset.y + 100);
+			, pos.x + offset.x + 100 * GetSize().x
+			, pos.y + offset.y + 100 * GetSize().y);
 
 		SelectObject(hdc, oldBrush);
 		SelectObject(hdc, oldPen);

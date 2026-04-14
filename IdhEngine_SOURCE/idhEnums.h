@@ -23,6 +23,7 @@ namespace idh::enums
 		//Character
 		Animal,
 		Player,
+		Floor,
 		Particle,
 		Max = 16,
 	};

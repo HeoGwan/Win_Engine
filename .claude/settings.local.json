@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaSceneManager.cpp)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaRigidbody.h)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaRigidbody.cpp)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloor.h)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloor.cpp)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloorScript.h)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloorScript.cpp)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaObject.h)",
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaEnums.h)"
     ]
   }
 }

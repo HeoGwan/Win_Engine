@@ -104,6 +104,48 @@ namespace idh::math
 			y += other.y;
 		}
 
+		void operator-= (Vector2 other)
+		{
+			x -= other.x;
+			y -= other.y;
+		}
+
+		void operator*= (Vector2 other)
+		{
+			x *= other.x;
+			y *= other.y;
+		}
+
+		void operator/= (Vector2 other)
+		{
+			x /= other.x;
+			y /= other.y;
+		}
+
+		void operator+= (float value)
+		{
+			x += value;
+			y += value;
+		}
+
+		void operator-= (float value)
+		{
+			x -= value;
+			y -= value;
+		}
+
+		void operator*= (float value)
+		{
+			x *= value;
+			y *= value;
+		}
+
+		void operator/= (float value)
+		{
+			x /= value;
+			y /= value;
+		}
+
 		bool operator== (Vector2 v)
 		{
 			return (x == v.x) && (y == v.y);

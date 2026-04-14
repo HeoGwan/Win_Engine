@@ -135,6 +135,8 @@
     <ClInclude Include="idhCameraScript.h" />
     <ClInclude Include="idhCat.h" />
     <ClInclude Include="idhCatScript.h" />
+    <ClInclude Include="idhFloor.h" />
+    <ClInclude Include="idhFloorScript.h" />
     <ClInclude Include="idhLoadScene.h" />
     <ClInclude Include="idhPlayer.h" />
     <ClInclude Include="idhPlayerScript.h" />
@@ -148,6 +150,8 @@
     <ClCompile Include="idhCameraScript.cpp" />
     <ClCompile Include="idhCat.cpp" />
     <ClCompile Include="idhCatScript.cpp" />
+    <ClCompile Include="idhFloor.cpp" />
+    <ClCompile Include="idhFloorScript.cpp" />
     <ClCompile Include="idhPlayer.cpp" />
     <ClCompile Include="idhPlayerScript.cpp" />
     <ClCompile Include="idhPlayScene.cpp" />
