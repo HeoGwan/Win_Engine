@@ -35,38 +35,6 @@ namespace idh
 	
 	void PlayScene::Initialize()
 	{
-		FILE* pFile = nullptr;
-		_wfopen_s(&pFile, L"..\\Resources\\Test", L"rb");
-
-		while (true)
-		{
-			int idxX = 0;
-			int idxY = 0;
-
-			int posX = 0;
-			int posY = 0;
-
-			if (fread(&idxX, sizeof(int), 1, pFile) == NULL)
-				break;
-			if (fread(&idxY, sizeof(int), 1, pFile) == NULL)
-				break;
-			if (fread(&posX, sizeof(int), 1, pFile) == NULL)
-				break;
-			if (fread(&posY, sizeof(int), 1, pFile) == NULL)
-				break;
-
-			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile, Vector2(posX, posY));
-			TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
-			tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
-			tmr->SetIndex(Vector2(idxX, idxY));
-
-			//mTile.push_back(tile);
-		}
-
-		fclose(pFile);
-
-		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
-
 		// main camera
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::Particle, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
@@ -77,8 +45,8 @@ namespace idh
 		object::DontDestroyOnLoad(mPlayer);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 
-		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
-		//CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
+		//BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+		CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 		collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"Player");
@@ -159,6 +127,8 @@ namespace idh
 	void PlayScene::OnEnter()
 	{
 		Scene::OnEnter();
+
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
 	}
 
 	void PlayScene::OnExit()

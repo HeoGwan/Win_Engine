@@ -1,5 +1,5 @@
 #include "idhScene.h"
-
+#include "idhCollisionManager.h"
 
 namespace idh
 {
@@ -80,7 +80,7 @@ namespace idh
 
 	void Scene::OnExit()
 	{
-
+		CollisionManager::Clear();
 	}
 
 	void Scene::AddGameObject(GameObject* gameObj, const enums::eLayerType type)

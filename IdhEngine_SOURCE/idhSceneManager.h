@@ -21,6 +21,7 @@ namespace idh
 		static Scene* LoadScene(const std::wstring& name);
 		static Scene* GetActiveScene() { return mActiveScene; }
 		static Scene* GetDontDestroyScene() { return mDontDestroyScene; }
+		static std::vector<GameObject*> GetGameObjects(eLayerType layer);
 
 		static void Initialize();
 		static void Update();
