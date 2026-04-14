@@ -85,6 +85,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhRigidbody.cpp">
       <Filter>Component\Rigitbody</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIBase.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -180,6 +186,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhRigidbody.h">
       <Filter>Component\Rigitbody</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIManager.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIBase.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -244,6 +256,9 @@
     </Filter>
     <Filter Include="Object">
       <UniqueIdentifier>{abf78981-2a2f-486c-914b-0f02d343039a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{80b60fd3-b81e-4241-98e5-f616ec725a25}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

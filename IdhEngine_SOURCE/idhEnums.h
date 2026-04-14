@@ -43,4 +43,10 @@ namespace idh::enums
 		Rect2D,
 		End,
 	};
+
+	enum class eUIType
+	{
+
+		End,
+	};
 }

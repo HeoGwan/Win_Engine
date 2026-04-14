@@ -45,6 +45,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimation.cpp" />
@@ -75,5 +77,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIManager.cpp" />
   </ItemGroup>
 </Project>
