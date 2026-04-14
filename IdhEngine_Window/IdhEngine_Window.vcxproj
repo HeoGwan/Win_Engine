@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="idhCameraScript.h" />
     <ClInclude Include="idhCat.h" />
     <ClInclude Include="idhCatScript.h" />
     <ClInclude Include="idhLoadScene.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="idhToolScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="idhCameraScript.cpp" />
     <ClCompile Include="idhCat.cpp" />
     <ClCompile Include="idhCatScript.cpp" />
     <ClCompile Include="idhPlayer.cpp" />

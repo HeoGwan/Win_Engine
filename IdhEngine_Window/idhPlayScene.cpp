@@ -17,6 +17,8 @@
 #include "idhBoxCollider2D.h"
 #include "idhCircleCollider2D.h"
 #include "idhCollisionManager.h"
+#include "idhTile.h"
+#include "idhTilemapRenderer.h"
 
 
 namespace idh
@@ -33,6 +35,36 @@ namespace idh
 	
 	void PlayScene::Initialize()
 	{
+		FILE* pFile = nullptr;
+		_wfopen_s(&pFile, L"..\\Resources\\Test", L"rb");
+
+		while (true)
+		{
+			int idxX = 0;
+			int idxY = 0;
+
+			int posX = 0;
+			int posY = 0;
+
+			if (fread(&idxX, sizeof(int), 1, pFile) == NULL)
+				break;
+			if (fread(&idxY, sizeof(int), 1, pFile) == NULL)
+				break;
+			if (fread(&posX, sizeof(int), 1, pFile) == NULL)
+				break;
+			if (fread(&posY, sizeof(int), 1, pFile) == NULL)
+				break;
+
+			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile, Vector2(posX, posY));
+			TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
+			tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
+			tmr->SetIndex(Vector2(idxX, idxY));
+
+			//mTile.push_back(tile);
+		}
+
+		fclose(pFile);
+
 		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
 
 		// main camera
@@ -59,7 +91,7 @@ namespace idh
 
 		playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
 
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(350.0f, 250.0f));
+		mPlayer->GetComponent<Transform>()->SetIndexPosition(Vector2(350.0f, 250.0f));
 
 
 		///CAT
@@ -96,7 +128,7 @@ namespace idh
 
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
-		cat->GetComponent<Transform>()->SetPosition(Vector2(200, 200.0f));
+		cat->GetComponent<Transform>()->SetIndexPosition(Vector2(200, 200.0f));
 		//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출

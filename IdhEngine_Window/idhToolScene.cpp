@@ -7,6 +7,7 @@
 #include "idhTilemapRenderer.h"
 #include "idhResources.h"
 #include "idhInput.h"
+#include "idhCameraScript.h"
 
 namespace idh
 {
@@ -24,12 +25,14 @@ namespace idh
 	{
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::Particle, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
+		camera->AddComponent<CameraScript>();
+
 		renderer::mainCamera = cameraComp;
 
-		Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
-		TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
+		//Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
+		//TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
 
-		tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
+		//tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
 
 
 		Scene::Initialize();
@@ -47,17 +50,26 @@ namespace idh
 		if (Input::GetKeyDown(eKeyCode::LButton))
 		{
 			Vector2 pos = Input::GetMousePosition();
+			
+			pos = renderer::mainCamera->CalculateTilePosition(pos);
 
-			int idxX = pos.x / TilemapRenderer::TileSize.x;
-			int idxY = pos.y / TilemapRenderer::TileSize.y;
+			if (pos.x >= 0.0f && pos.y >= 0.0f)
+			{
+				int idxX = pos.x / TilemapRenderer::TileSize.x;
+				int idxY = pos.y / TilemapRenderer::TileSize.y;
 
-			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
-			TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
-			tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
-			tmr->SetIndex(TilemapRenderer::SelectedIndex);
+				Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
+				TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
+				tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
+				tmr->SetIndex(TilemapRenderer::SelectedIndex);
 
-			tile->SetPosition(idxX, idxY);
-			mTiles.push_back(tile);
+				tile->SetIndexPosition(idxX, idxY);
+				mTiles.push_back(tile);
+			}
+			else
+			{
+				// 
+			}
 		}
 
 		if (Input::GetKeyDown(eKeyCode::S))
@@ -76,14 +88,20 @@ namespace idh
 
 		for (size_t i = 0; i < 50; i++)
 		{
-			MoveToEx(hdc, TilemapRenderer::TileSize.x * i, 0, NULL);
-			LineTo(hdc, TilemapRenderer::TileSize.x * i, 1000);
+			Vector2 pos = renderer::mainCamera->CalculatePosition(
+				Vector2(TilemapRenderer::TileSize.x * i, 0.0f)
+			);
+			MoveToEx(hdc, pos.x, 0, NULL);
+			LineTo(hdc, pos.x, 1000);
 		}
 
 		for (size_t i = 0; i < 50; i++)
 		{
-			MoveToEx(hdc, 0, TilemapRenderer::TileSize.y * i, NULL);
-			LineTo(hdc, 1000, TilemapRenderer::TileSize.y * i);
+			Vector2 pos = renderer::mainCamera->CalculatePosition(
+				Vector2(0.0f, TilemapRenderer::TileSize.y * i)
+			);
+			MoveToEx(hdc, 0, pos.y, NULL);
+			LineTo(hdc, 1000, pos.y);
 		}
 	}
 
@@ -188,12 +206,11 @@ namespace idh
 			if (fread(&posY, sizeof(int), 1, pFile) == NULL)
 				break;
 
-			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile);
+			Tile* tile = object::Instantiate<Tile>(eLayerType::Tile, Vector2(posX, posY));
 			TilemapRenderer* tmr = tile->AddComponent<TilemapRenderer>();
 			tmr->SetTexture(Resources::Find<graphics::Texture>(L"SpringFloor"));
 			tmr->SetIndex(Vector2(idxX, idxY));
 
-			tile->SetPosition(posX, posY);
 			mTiles.push_back(tile);
 		}
 

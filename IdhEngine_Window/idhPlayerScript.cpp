@@ -90,7 +90,7 @@ namespace idh
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 
 		catAnimator->PlayAnimation(L"SitDown", false);
-		cat->GetComponent<Transform>()->SetPosition(tr->GetPosition());
+		cat->GetComponent<Transform>()->SetIndexPosition(tr->GetPosition());
 		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		Vector2 mousePos = Input::GetMousePosition();
@@ -99,7 +99,7 @@ namespace idh
 
 	void PlayerScript::OnCollisionEnter(class Collider* other)
 	{
-		other->GetOwner()->GetComponent<Transform>()->SetPosition(Vector2(400.0f, 500.0f));
+		other->GetOwner()->GetComponent<Transform>()->SetIndexPosition(Vector2(400.0f, 500.0f));
 	}
 
 	void PlayerScript::OnCollisionStay(class Collider* other)
@@ -140,7 +140,7 @@ namespace idh
 			Transform* tr = GetOwner()->GetComponent<Transform>();
 
 			catAnimator->PlayAnimation(L"SitDown", false);
-			cat->GetComponent<Transform>()->SetPosition(tr->GetPosition());
+			cat->GetComponent<Transform>()->SetIndexPosition(tr->GetPosition());
 			cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 			Vector2 mousePos = Input::GetMousePosition();
@@ -173,7 +173,7 @@ namespace idh
 			pos.y += 100.0f * Time::DeltaTime();
 		}
 
-		tr->SetPosition(pos);
+		tr->SetIndexPosition(pos);
 
 	}
 
@@ -199,7 +199,7 @@ namespace idh
 			pos.y += 100.0f * Time::DeltaTime();
 		}
 
-		tr->SetPosition(pos);
+		tr->SetIndexPosition(pos);
 
 		if (Input::GetKeyUp(eKeyCode::D) || Input::GetKeyUp(eKeyCode::A)
 			|| Input::GetKeyUp(eKeyCode::W) || Input::GetKeyUp(eKeyCode::S))
