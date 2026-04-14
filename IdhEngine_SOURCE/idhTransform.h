@@ -15,7 +15,7 @@ namespace idh
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
-		void SetIndexPosition(Vector2 pos) { mPosition.x = pos.x; mPosition.y = pos.y; }
+		void SetPosition(Vector2 pos) { mPosition.x = pos.x; mPosition.y = pos.y; }
 		void SetRotation(float rotate) { mRotation = rotate; }
 		void SetScale(Vector2 scale) { mScale = scale; }
 

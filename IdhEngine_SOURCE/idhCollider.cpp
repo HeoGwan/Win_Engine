@@ -23,6 +23,7 @@ namespace idh
 
 	void Collider::Initialize()
 	{
+
 	}
 
 	void Collider::Update()
@@ -37,6 +38,7 @@ namespace idh
 
 	void Collider::Render(HDC hdc)
 	{
+
 	}
 
 	void Collider::OnCollisionEnter(Collider* other)

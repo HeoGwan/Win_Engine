@@ -19,6 +19,7 @@
 #include "idhCollisionManager.h"
 #include "idhTile.h"
 #include "idhTilemapRenderer.h"
+#include "idhRigidbody.h"
 
 
 namespace idh
@@ -59,7 +60,9 @@ namespace idh
 
 		playerAnimator->GetCompleteEvent(L"FrontGiveWater") = std::bind(&PlayerScript::AttackEffect, plScript);
 
-		mPlayer->GetComponent<Transform>()->SetIndexPosition(Vector2(350.0f, 250.0f));
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(350.0f, 250.0f));
+
+		mPlayer->AddComponent<Rigidbody>();
 
 
 		///CAT
@@ -96,7 +99,7 @@ namespace idh
 
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
-		cat->GetComponent<Transform>()->SetIndexPosition(Vector2(200, 200.0f));
+		cat->GetComponent<Transform>()->SetPosition(Vector2(200, 200.0f));
 		//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출

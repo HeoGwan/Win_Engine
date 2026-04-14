@@ -193,6 +193,6 @@ namespace idh
 			assert(false);
 			break;
 		}
-		tr->SetIndexPosition(pos);
+		tr->SetPosition(pos);
 	}
 }

@@ -31,6 +31,6 @@ namespace idh
 		Vector2 pos;
 		pos.x = x * TilemapRenderer::TileSize.x;
 		pos.y = y * TilemapRenderer::TileSize.y;
-		tr->SetIndexPosition(pos);
+		tr->SetPosition(pos);
 	}
 }

@@ -49,7 +49,7 @@ namespace idh
 			pos.y += 100.0f * Time::DeltaTime();
 		}
 
-		tr->SetIndexPosition(pos);
+		tr->SetPosition(pos);
 	}
 
 	void CameraScript::LateUpdate()

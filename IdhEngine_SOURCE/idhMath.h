@@ -53,6 +53,11 @@ namespace idh::math
 			
 		}
 
+		Vector2 operator- ()
+		{
+			return Vector2(-x, -y);
+		}
+
 		Vector2 operator+ (Vector2 other)
 		{
 			return Vector2(x + other.x, y + other.y);
@@ -97,6 +102,11 @@ namespace idh::math
 		{
 			x += other.x;
 			y += other.y;
+		}
+
+		bool operator== (Vector2 v)
+		{
+			return (x == v.x) && (y == v.y);
 		}
 
 		void clear()

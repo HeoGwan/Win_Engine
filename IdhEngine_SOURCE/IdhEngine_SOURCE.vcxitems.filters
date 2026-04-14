@@ -55,12 +55,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhRenderer.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimation.cpp">
-      <Filter>Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimator.cpp">
-      <Filter>Component</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCollider.cpp">
       <Filter>Component\Collider</Filter>
     </ClCompile>
@@ -73,12 +67,23 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCollisionManager.cpp">
       <Filter>Collision</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.cpp">
       <Filter>TileMapRenderer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)idhDestroy.cpp">
       <Filter>Destroy</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimation.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimator.cpp">
+      <Filter>Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhRigidbody.cpp">
+      <Filter>Component\Rigitbody</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +123,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEnums.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhObject.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhResources.h">
       <Filter>Resource</Filter>
     </ClInclude>
@@ -145,12 +147,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhRenderer.h">
       <Filter>Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimation.h">
-      <Filter>Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimator.h">
-      <Filter>Component</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCollider.h">
       <Filter>Component\Collider</Filter>
     </ClInclude>
@@ -163,12 +159,26 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCollisionManager.h">
       <Filter>Collision</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhTilemapRenderer.h">
       <Filter>TileMapRenderer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhDestroy.h">
       <Filter>Destroy</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimation.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimator.h">
+      <Filter>Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhRigidbody.h">
+      <Filter>Component\Rigitbody</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +235,15 @@
     </Filter>
     <Filter Include="Destroy">
       <UniqueIdentifier>{cf8524d6-50ed-4316-a82d-aaf7b4232d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Rigitbody">
+      <UniqueIdentifier>{bd95d90f-39b2-4992-b94c-8a428a59f121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animator">
+      <UniqueIdentifier>{7eeb16de-2590-428a-b4d9-1030ae735669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{abf78981-2a2f-486c-914b-0f02d343039a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
