@@ -1,5 +1,6 @@
 #pragma once
 #include "..\\IdhEngine_SOURCE\\idhScene.h"
+#include "idhTile.h"
 
 namespace idh
 {
@@ -17,8 +18,11 @@ namespace idh
 		void OnEnter() override;
 		void OnExit() override;
 
-	private:
+		void Save();
+		void Load();
 
+	private:
+		std::vector<Tile*> mTiles;
 	};
 }
 

@@ -185,7 +185,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    UINT toolWidth = rect.right - rect.left;
    UINT toolHeight = rect.bottom - rect.top;
 
-   SetWindowPos(ToolHWnd, nullptr, width, 0, toolWidth, toolHeight, 0);
+   SetWindowPos(ToolHWnd, nullptr, width + 200, 0, toolWidth, toolHeight + 32, 0);
    ShowWindow(ToolHWnd, true);
    UpdateWindow(ToolHWnd);
 
