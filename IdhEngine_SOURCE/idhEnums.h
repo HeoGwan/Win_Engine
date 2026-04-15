@@ -46,7 +46,8 @@ namespace idh::enums
 
 	enum class eUIType
 	{
-
+		HpBar,
+		Button,
 		End,
 	};
 }

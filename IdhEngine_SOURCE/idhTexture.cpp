@@ -29,6 +29,7 @@ namespace idh::graphics
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
 		Rectangle(image->mHdc, -1, -1, image->GetWidth() + 1, image->GetHeight() + 1);
 		SelectObject(hdc, oldBrush);
+		DeleteObject(transparentBrush);
 
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
 		DeleteObject(oldBitmap);

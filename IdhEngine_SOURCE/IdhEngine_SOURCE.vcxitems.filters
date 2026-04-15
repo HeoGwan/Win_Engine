@@ -91,6 +91,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhUIManager.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIHUD.cpp">
+      <Filter>UI\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhUIButton.cpp">
+      <Filter>UI\Button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -192,6 +198,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhUIBase.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIHUD.h">
+      <Filter>UI\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhUIButton.h">
+      <Filter>UI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -259,6 +271,12 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{80b60fd3-b81e-4241-98e5-f616ec725a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Button">
+      <UniqueIdentifier>{c75c736a-cca9-472b-abf3-45a765b800bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\HUD">
+      <UniqueIdentifier>{c59c3ee3-25d4-47d5-9913-aa2cd4ad73ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

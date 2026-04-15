@@ -22,6 +22,7 @@
 #include "idhRigidbody.h"
 #include "idhFloor.h"
 #include "idhFloorScript.h"
+#include "idhUIManager.h"
 
 
 namespace idh
@@ -108,10 +109,14 @@ namespace idh
 
 		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
 		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Floor, true);
+
+		UIManager::Push(eUIType::Button);
 	}
 
 	void PlayScene::OnExit()
 	{
+		UIManager::Pop(eUIType::Button);
+
 		Scene::OnExit();
 	}
 }

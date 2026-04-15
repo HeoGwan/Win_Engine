@@ -10,6 +10,7 @@
 #include "idhResources.h"
 #include "idhCollider.h"
 #include "idhRigidbody.h"
+#include "idhUIManager.h"
 
 namespace idh
 {
@@ -177,6 +178,16 @@ namespace idh
 			velocity.y = -500.0f;
 			rb->SetVelocity(velocity);
 			rb->SetGround(false);
+		}
+
+		if (Input::GetKeyDown(eKeyCode::I))
+		{
+			UIManager::Push(eUIType::HpBar);
+		}
+
+		if (Input::GetKeyDown(eKeyCode::O))
+		{
+			UIManager::Pop(eUIType::HpBar);
 		}
 	}
 

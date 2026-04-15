@@ -59,6 +59,7 @@ namespace idh
 
 		SelectObject(hdc, oldBrush);
 		SelectObject(hdc, oldPen);
+		DeleteObject(transparentBrush);
 		DeleteObject(greenPen);
 	}
 }

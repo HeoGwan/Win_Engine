@@ -4,6 +4,7 @@
 #include "idhSceneManager.h"
 #include "idhResources.h"
 #include "idhCollisionManager.h"
+#include "idhUIManager.h"
 
 namespace idh
 {
@@ -30,6 +31,7 @@ namespace idh
 		initializeEtc();
 
 		CollisionManager::Initialize();
+		UIManager::Initialize();
 		SceneManager::Initialize();
 	}
 
@@ -47,12 +49,14 @@ namespace idh
 		Time::Update();
 
 		CollisionManager::Update();
+		UIManager::Update();
 		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
 	{
 		CollisionManager::LateUpdate();
+		UIManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 	
@@ -63,6 +67,7 @@ namespace idh
 		Time::Render(mBackHdc);
 		Input::Render(mBackHdc);
 		CollisionManager::Render(mBackHdc);
+		UIManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
@@ -76,6 +81,7 @@ namespace idh
 	void Application::Release()
 	{
 		SceneManager::Release();
+		UIManager::Release();
 		Resources::Release();
 	}
 
