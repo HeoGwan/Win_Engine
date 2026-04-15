@@ -1,5 +1,6 @@
 #pragma once
 #include "..\\IdhEngine_SOURCE\\idhScript.h"
+#include "..\\IdhEngine_SOURCE\\idhTexture.h"
 
 namespace idh
 {
@@ -29,6 +30,8 @@ namespace idh
 		void OnCollisionStay(class Collider* other);
 		void OnCollisionExit(class Collider* other);
 
+		void SetPixelMapTexture(class graphics::Texture* texture) { mPixelMap = texture; }
+
 	private:
 		void idle();
 		void move();
@@ -37,5 +40,6 @@ namespace idh
 	private:
 		eState mState;
 		class Animator* mAnimator;
+		class graphics::Texture* mPixelMap;
 	};
 }

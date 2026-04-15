@@ -6,7 +6,7 @@
 namespace idh
 {
 	SpriteRenderer::SpriteRenderer()
-		: Component(enums::eComponentType::Transform)
+		: Component(enums::eComponentType::SpriteRenderer)
 		, mTexture(nullptr)
 		, mSize(Vector2::One)
 	{

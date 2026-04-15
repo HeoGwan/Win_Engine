@@ -170,6 +170,5 @@ namespace idh::math
 
 			return *this;
 		}
-
 	};
 }

@@ -74,7 +74,7 @@ namespace idh::graphics
 
 			if (info.bmBitsPixel == 32)
 				mbAlpha = true;
-			else if (info.bmBitsPixel == 32)
+			else if (info.bmBitsPixel == 24)
 				mbAlpha = false;
 
 			HDC mainDC = application.GetHdc();
@@ -97,5 +97,10 @@ namespace idh::graphics
 		}
 
 		return S_OK;
+	}
+
+	COLORREF Texture::GetPixel(int x, int y)
+	{
+		return ::GetPixel(mHdc, x, y);
 	}
 }

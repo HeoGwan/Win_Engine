@@ -10,5 +10,6 @@ namespace idh
 		Resources::Load<graphics::Texture>(L"Player", L"..\\Resources\\player.bmp");
 		Resources::Load<graphics::Texture>(L"SpringFloor", L"..\\Resources\\SpringFloor.bmp");
 		Resources::Load<graphics::Texture>(L"HPBAR", L"..\\Resources\\HPBAR.bmp");
+		Resources::Load<graphics::Texture>(L"PixelMap", L"..\\Resources\\pixelMap.bmp");
 	}
 }
