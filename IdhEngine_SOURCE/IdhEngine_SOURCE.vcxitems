@@ -18,6 +18,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioListener.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioSource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhBoxCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhCircleCollider2D.h" />
@@ -28,6 +31,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhEnums.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhFmod.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)idhLayer.h" />
@@ -54,6 +58,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioListener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioSource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhCircleCollider2D.cpp" />
@@ -63,6 +70,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhDestroy.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhEntity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhFmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)idhLayer.cpp" />

@@ -11,7 +11,8 @@
       "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloorScript.h)",
       "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_Window/yaFloorScript.cpp)",
       "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaObject.h)",
-      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaEnums.h)"
+      "Bash(curl -s https://raw.githubusercontent.com/eazuooz/YamYam_Engine/daf4e82616430db70946957470ec4722d23abf58/YamYamEngine_SOURCE/yaEnums.h)",
+      "Bash(grep -r \"Rectangle\\\\|CreateBrush\\\\|SelectObject\\\\|DeleteObject\" /c/Users/DSU/Desktop/04_Study/02_C++/IdhEngine/IdhEngine_SOURCE/*.cpp)"
     ]
   }
 }

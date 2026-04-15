@@ -7,6 +7,7 @@
 #include "idhObject.h"
 #include "idhCollider.h"
 #include "idhRigidbody.h"
+#include "idhAudioSource.h"
 
 namespace idh
 {
@@ -60,6 +61,10 @@ namespace idh
 
 			playerTr->SetPosition(playerPos);
 		}
+
+		AudioSource* as = GetOwner()->GetComponent<AudioSource>();
+		as->SetLoop(true);
+		as->Play();
 
 		playerRb->SetGround(true);
 	}

@@ -23,6 +23,9 @@
 #include "idhFloor.h"
 #include "idhFloorScript.h"
 #include "idhUIManager.h"
+#include "idhAudioClip.h"
+#include "idhAudioListener.h"
+#include "idhAudioSource.h"
 
 
 namespace idh
@@ -47,8 +50,7 @@ namespace idh
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		object::DontDestroyOnLoad(mPlayer);
-
-
+		mPlayer->AddComponent<AudioListener>();
 
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 
@@ -72,11 +74,15 @@ namespace idh
 
 		Floor* floor = object::Instantiate<Floor>(eLayerType::Floor, Vector2(100.0f, 600.0f));
 		floor->SetName(L"Floor");
+		AudioSource* as = floor->AddComponent<AudioSource>();
+
 		BoxCollider2D* floorCol = floor->AddComponent<BoxCollider2D>();
 		floorCol->SetSize(Vector2(3.0f, 1.0f));
 		floor->AddComponent<FloorScript>();
 		
-
+		AudioClip* ac = Resources::Load<AudioClip>(L"BGSound", L"..\\Resources\\Sound\\smw_bonus_game_end.wav");
+		as->SetClip(ac);
+		//as->Play();
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();

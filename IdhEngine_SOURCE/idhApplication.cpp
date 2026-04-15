@@ -5,6 +5,7 @@
 #include "idhResources.h"
 #include "idhCollisionManager.h"
 #include "idhUIManager.h"
+#include "idhFmod.h"
 
 namespace idh
 {
@@ -30,6 +31,7 @@ namespace idh
 		createBuffer(width, height);
 		initializeEtc();
 
+		Fmod::Initialize();
 		CollisionManager::Initialize();
 		UIManager::Initialize();
 		SceneManager::Initialize();
@@ -93,7 +95,7 @@ namespace idh
 
 		Rectangle(mBackHdc, -1, -1, 1601, 901);
 
-		(HBRUSH)SelectObject(mHdc, oldBrush);
+		(HBRUSH)SelectObject(mBackHdc, oldBrush);
 		DeleteObject(grayBrush);
 	}
 

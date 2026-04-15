@@ -97,6 +97,18 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)idhUIButton.cpp">
       <Filter>UI\Button</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhFmod.cpp">
+      <Filter>Fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioListener.cpp">
+      <Filter>Component\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioSource.cpp">
+      <Filter>Component\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)idhAudioClip.cpp">
+      <Filter>Resource\Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)idhComponent.h">
@@ -204,6 +216,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)idhUIButton.h">
       <Filter>UI\Button</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhFmod.h">
+      <Filter>Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioListener.h">
+      <Filter>Component\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioSource.h">
+      <Filter>Component\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)idhAudioClip.h">
+      <Filter>Resource\Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Component">
@@ -277,6 +301,15 @@
     </Filter>
     <Filter Include="UI\HUD">
       <UniqueIdentifier>{c59c3ee3-25d4-47d5-9913-aa2cd4ad73ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fmod">
+      <UniqueIdentifier>{18e6c94e-3a6a-4899-a7fa-12572f11d85f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Audio">
+      <UniqueIdentifier>{ea2b3efa-de0b-4377-929f-50e6d46b2134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Audio">
+      <UniqueIdentifier>{a5f620bf-e638-40f6-8001-03891a0208d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
